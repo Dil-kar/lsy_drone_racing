@@ -64,8 +64,9 @@ pos = [0.0, 1.5, 1.4]
 [[env.track.obstacles]]
 pos = [-0.5, 0.5, 1.4]
 
-[[env.track.drones]]
-pos = [1.0, 1.5, 0.07]
+[[env.track.drones]]'
+
+pos = [1.0, 1.5, 0.5]
 rpy = [0, 0, 0]
 vel = [0, 0, 0]
 ang_vel = [0, 0, 0]
