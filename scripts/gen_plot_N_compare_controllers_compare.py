@@ -291,7 +291,7 @@ def plot_controller_comparison_grid(
                bbox_to_anchor=(0.5, 0.04), ncol=4, fontsize=14)
     
     plt.subplots_adjust(bottom=0.15)
-    # plt.savefig(save_file)
+    plt.savefig(save_file)
     plt.show()
     print(f"Grid plot displayed.")
 
@@ -413,7 +413,7 @@ def plot_three_runs_side_by_side(
                bbox_to_anchor=(0.45, 0.03), ncol=5, fontsize=14)
 
     plt.tight_layout(rect=[0, 0.1, 0.9, 0.95]) 
-    # plt.savefig(save_file)
+    plt.savefig(save_file)
     plt.show()
     print(f"Side-by-side plot displayed.")
 
@@ -428,23 +428,23 @@ if __name__ == "__main__":
     # --- EXPERIMENT 1 CONFIGURATION: Grid Comparison ---
     grid_experiment_files = {
         'SQP': {
-            20: r'scripts/sqp_vs_mpc_K_exp/10lap_mpc_N20.npy',
-            25: r'scripts/sqp_vs_mpc_K_exp/10lap_mpc_N25.npy',
-            30: r'scripts/sqp_vs_mpc_K_exp/10lap_mpc_N30.npy'
+            20: r'/content/repos/lsy_drone_racing/lsy_drone_racing/experiments/SQP_20.npy',
+            25: r'/content/repos/lsy_drone_racing/lsy_drone_racing/experiments/SQP_25.npy',
+            30: r'/content/repos/lsy_drone_racing/lsy_drone_racing/experiments/SQP_30.npy'
         },
         'MPC': {
-            20: r'scripts/sqp_vs_mpc_K_exp/10lap_sqp_nmpc_N20.npy',
-            25: r'scripts/sqp_vs_mpc_K_exp/10lap_sqp_nmpc_N25.npy',
-            30: r'scripts/sqp_vs_mpc_K_exp/10lap_sqp_nmpc_N30.npy'
+            20: r'/content/repos/lsy_drone_racing/lsy_drone_racing/experiments/MPC_20.npy',
+            25: r'/content/repos/lsy_drone_racing/lsy_drone_racing/experiments/MPC_25.npy',
+            30: r'/content/repos/lsy_drone_racing/lsy_drone_racing/experiments/MPC_30.npy'
         }
     }
 
     # --- EXPERIMENT 2 CONFIGURATION: Side-by-Side Comparison ---
     side_by_side_titles = ['PID', 'MPC', 'SQP-NMPC']
     side_by_side_files = [
-        'scripts/pid_vs_mpc_sqp/10lap_pid.npy', 
-        'scripts/pid_vs_mpc_sqp/10lap_mpc.npy', 
-        'scripts/pid_vs_mpc_sqp/10lap_sqp_nmpc.npy'
+        '/content/repos/lsy_drone_racing/lsy_drone_racing/experiments/PID.npy', 
+        '/content/repos/lsy_drone_racing/lsy_drone_racing/experiments/MPC_30.npy', 
+        '/content/repos/lsy_drone_racing/lsy_drone_racing/experiments/SQP_30.npy'
     ]
 
     # --- RUN PLOTS ---
@@ -455,7 +455,7 @@ if __name__ == "__main__":
     plot_controller_comparison_grid(
         experiment_map=grid_experiment_files,
         plotter=plotter_instance,
-        save_file="controller_comparison_grid.png"
+        save_file="/content/repos/lsy_drone_racing/lsy_drone_racing/experiments/N_comparison_grid.png"
     )
 
     # 2. Plot 3-way Comparison
@@ -463,5 +463,5 @@ if __name__ == "__main__":
         files_to_plot=side_by_side_files,
         titles=side_by_side_titles,
         plotter=plotter_instance,
-        save_file="three_runs_comparison.png"
+        save_file="/content/repos/lsy_drone_racing/lsy_drone_racing/experiments/controller_comparison.png"
     )

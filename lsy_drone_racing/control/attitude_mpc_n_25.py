@@ -193,22 +193,22 @@ class AttitudeMPC(Controller):
             config: The configuration of the environment.
         """
         super().__init__(obs, info, config)
-        self._N = 30
+        self._N = 25
         self._dt = 1 / config.env.freq
         self._T_HORIZON = self._N * self._dt
 
         # Same waypoints as in the trajectory controller. Determined by trial and error.
         waypoints = np.array(
             [
-                [1.0, 1.5, 0.6],
-                [0.8, 1.0, 0.6],
-                [0.55, -0.3, 0.6],
-                [0.2, -1.3, 1.075],
-                [1.1, -0.85, 1.1],
-                [0.2, 0.5, 0.65],
-                [0.0, 1.2, 0.6],
+                [1.0, 1.5, 0.6], 
+                [0.8, 1.0, 0.6], 
+                [0.55, -0.3, 0.6], 
+                [0.0, -1.3, 1.075],
+                [1.1, -0.85, 1.1], 
+                [0.2, 0.5, 0.65], 
+                [0.0, 1.2, 0.6], 
                 [0.0, 1.2, 1.1],
-                [-0.5, 0.0, 1.1],
+                [-0.5, 0.0, 1.1], 
                 [-0.5, -0.5, 1.1],
             ]
         )

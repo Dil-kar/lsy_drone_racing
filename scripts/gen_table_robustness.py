@@ -53,24 +53,27 @@ def generate_performance_table(all_runs_data: List[Dict[str, Any]], solver_name:
 
 # --- Execution for Comparison ---
 
+
+
+
 if __name__ == "__main__":
     
     # New experiment file structure for robustness testing
     experiment_files = {
         'SQP': {
-            0.001: r'scripts/robustness/10lap_sqp_nmpc_scale_0_001_disturbance.npy',
-            0.005: r'scripts/robustness/10lap_sqp_nmpc_scale_0_005_disturbance.npy',
-            0.01: r'scripts/robustness/10lap_sqp_nmpc_scale_0_01_disturbance.npy'
+            0.001: r'/content/repos/lsy_drone_racing/lsy_drone_racing/experiments/SQP_scale_0_001.npy',
+            0.005: r'/content/repos/lsy_drone_racing/lsy_drone_racing/experiments/SQP_scale_0_005.npy',
+            0.01: r'/content/repos/lsy_drone_racing/lsy_drone_racing/experiments/SQP_scale_0_01.npy'
         },
         'MPC': {
-            0.001: r'scripts/robustness/10lap_attitude_mpc_scale_0_001_disturbance.npy',
-            0.005: r'scripts/robustness/10lap_attitude_mpc_scale_0_005_disturbance.npy',
-            0.01: r'scripts/robustness/10lap_attitude_mpc_scale_0_01_disturbance.npy'
+            0.001: r'/content/repos/lsy_drone_racing/lsy_drone_racing/experiments/MPC_scale_0_001.npy',
+            0.005: r'/content/repos/lsy_drone_racing/lsy_drone_racing/experiments/MPC_scale_0_005.npy',
+            0.01: r'/content/repos/lsy_drone_racing/lsy_drone_racing/experiments/MPC_scale_0_01.npy'
         },
         'PID': {
-            0.001: r'scripts/robustness/10lap_pid_scale_0_001_disturbance.npy',
-            0.005: r'scripts/robustness/10lap_pid_scale_0_005_disturbance.npy',
-            0.01: r'scripts/robustness/10lap_pid_scale_0_01_disturbance.npy'
+            0.001: r'/content/repos/lsy_drone_racing/lsy_drone_racing/experiments/PID_scale_0_001.npy',
+            0.005: r'/content/repos/lsy_drone_racing/lsy_drone_racing/experiments/PID_scale_0_005.npy',
+            0.01: r'/content/repos/lsy_drone_racing/lsy_drone_racing/experiments/PID_scale_0_01.npy'
         }
     }
 

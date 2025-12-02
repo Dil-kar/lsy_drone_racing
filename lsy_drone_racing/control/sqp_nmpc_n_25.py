@@ -192,7 +192,7 @@ class AttitudeMPCRTI(Controller):
 
     def __init__(self, obs: dict[str, NDArray[np.floating]], info: dict, config: dict):
         super().__init__(obs, info, config)
-        self._N = 15  # Prediction horizon steps
+        self._N = 25  # Prediction horizon steps
         
         # Determine environment frequency
         try:
@@ -205,7 +205,7 @@ class AttitudeMPCRTI(Controller):
         self._T_HORIZON = self._N * self._dt
 
         # Trajectory Generation (same waypoints as attitude_mpc.py)
-        waypoints = np.array(
+        waypoints =  np.array(
             [
                 [1.0, 1.5, 0.6], 
                 [0.8, 1.0, 0.6], 

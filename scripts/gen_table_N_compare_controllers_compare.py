@@ -210,24 +210,29 @@ def plot_horizon_comparison_sqp_mpc(experiment_files: Dict[str, Dict[int, str]])
 if __name__ == "__main__":
     # --- CONFIGURATION 1: PID, MPC, SQP Comparison ---
     pid_mpc_sqp_files = {
-        "SQP NMPC": "scripts/pid_vs_mpc_sqp/10lap_sqp_nmpc.npy",
-        "PID Controller": "scripts/pid_vs_mpc_sqp/10lap_pid.npy",
-        "MPC": "scripts/pid_vs_mpc_sqp/10lap_mpc.npy",
+        "SQP NMPC": "/content/repos/lsy_drone_racing/lsy_drone_racing/experiments/SQP_30.npy",
+        "PID Controller": "/content/repos/lsy_drone_racing/lsy_drone_racing/experiments/PID.npy",
+        "MPC": "/content/repos/lsy_drone_racing/lsy_drone_racing/experiments/MPC_30.npy",
     }
     
+
+
     # --- CONFIGURATION 2: SQP vs. MPC vs. Horizon N Comparison ---
     horizon_experiment_files = {
         'SQP': {
-            20: r'scripts/sqp_vs_mpc_K_exp/10lap_sqp_nmpc_N20.npy',
-            25: r'scripts/sqp_vs_mpc_K_exp/10lap_sqp_nmpc_N25.npy',
-            30: r'scripts/sqp_vs_mpc_K_exp/10lap_sqp_nmpc_N30.npy'
+            20: r'/content/repos/lsy_drone_racing/lsy_drone_racing/experiments/SQP_20.npy',
+            25: r'/content/repos/lsy_drone_racing/lsy_drone_racing/experiments/SQP_25.npy',
+            30: r'/content/repos/lsy_drone_racing/lsy_drone_racing/experiments/SQP_30.npy'
         },
         'MPC': {
-            20: r'scripts/sqp_vs_mpc_K_exp/10lap_mpc_N20.npy',
-            25: r'scripts/sqp_vs_mpc_K_exp/10lap_mpc_N25.npy',
-            30: r'scripts/sqp_vs_mpc_K_exp/10lap_mpc_N30.npy'
+            20: r'/content/repos/lsy_drone_racing/lsy_drone_racing/experiments/MPC_20.npy',
+            25: r'/content/repos/lsy_drone_racing/lsy_drone_racing/experiments/MPC_25.npy',
+            30: r'/content/repos/lsy_drone_racing/lsy_drone_racing/experiments/MPC_30.npy'
         }
     }
+
+
+    
 
     # Execute the two comparison scripts sequentially
     
