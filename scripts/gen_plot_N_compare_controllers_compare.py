@@ -425,38 +425,38 @@ if __name__ == "__main__":
     # Initialize shared plotter
     plotter_instance = RacingPlotter(WAYPOINTS, GATE_DATA, config=MOCK_CONFIG)
 
-    # --- EXPERIMENT 1 CONFIGURATION: Grid Comparison ---
-    grid_experiment_files = {
-        'SQP': {
-            20: r'/content/repos/lsy_drone_racing/lsy_drone_racing/experiments/SQP_20.npy',
-            25: r'/content/repos/lsy_drone_racing/lsy_drone_racing/experiments/SQP_25.npy',
-            30: r'/content/repos/lsy_drone_racing/lsy_drone_racing/experiments/SQP_30.npy'
-        },
-        'MPC': {
-            20: r'/content/repos/lsy_drone_racing/lsy_drone_racing/experiments/MPC_20.npy',
-            25: r'/content/repos/lsy_drone_racing/lsy_drone_racing/experiments/MPC_25.npy',
-            30: r'/content/repos/lsy_drone_racing/lsy_drone_racing/experiments/MPC_30.npy'
-        }
-    }
+    # # --- EXPERIMENT 1 CONFIGURATION: Grid Comparison ---
+    # grid_experiment_files = {
+    #     'SQP': {
+    #         20: r'/content/repos/lsy_drone_racing/lsy_drone_racing/experiments/SQP_20.npy',
+    #         25: r'/content/repos/lsy_drone_racing/lsy_drone_racing/experiments/SQP_25.npy',
+    #         30: r'/content/repos/lsy_drone_racing/lsy_drone_racing/experiments/SQP_30.npy'
+    #     },
+    #     'MPC': {
+    #         20: r'/content/repos/lsy_drone_racing/lsy_drone_racing/experiments/MPC_20.npy',
+    #         25: r'/content/repos/lsy_drone_racing/lsy_drone_racing/experiments/MPC_25.npy',
+    #         30: r'/content/repos/lsy_drone_racing/lsy_drone_racing/experiments/MPC_30.npy'
+    #     }
+    # }
 
     # --- EXPERIMENT 2 CONFIGURATION: Side-by-Side Comparison ---
     side_by_side_titles = ['PID', 'MPC', 'SQP-NMPC']
     side_by_side_files = [
-        '/content/repos/lsy_drone_racing/lsy_drone_racing/experiments/PID.npy', 
-        '/content/repos/lsy_drone_racing/lsy_drone_racing/experiments/MPC_30.npy', 
-        '/content/repos/lsy_drone_racing/lsy_drone_racing/experiments/SQP_30.npy'
+        '/content/repos/lsy_drone_racing/lsy_drone_racing/experiments/PID_test_run.npy', 
+        '/content/repos/lsy_drone_racing/lsy_drone_racing/experiments/sqp_nmpc_test_run.npy', 
+        '/content/repos/lsy_drone_racing/lsy_drone_racing/experiments/rti_sqp_nmpc_test_run.npy'
     ]
 
     # --- RUN PLOTS ---
     # Note: matplotlib plots are blocking by default. 
     # Close the first window to see the second one.
     
-    # 1. Plot Controller vs N Grid
-    plot_controller_comparison_grid(
-        experiment_map=grid_experiment_files,
-        plotter=plotter_instance,
-        save_file="/content/repos/lsy_drone_racing/lsy_drone_racing/experiments/N_comparison_grid.png"
-    )
+    # # 1. Plot Controller vs N Grid
+    # plot_controller_comparison_grid(
+    #     experiment_map=grid_experiment_files,
+    #     plotter=plotter_instance,
+    #     save_file="/content/repos/lsy_drone_racing/lsy_drone_racing/experiments/N_comparison_grid.png"
+    # )
 
     # 2. Plot 3-way Comparison
     plot_three_runs_side_by_side(
